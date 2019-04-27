@@ -58,13 +58,16 @@ function modules() {
   // jQuery Easing
   var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
     .pipe(gulp.dest('./vendor/jquery-easing'));
+  // Magnific Popup
+  var magnificPopup = gulp.src('./node_modules/magnific-popup/dist/*')
+    .pipe(gulp.dest('./vendor/magnific-popup'));
   // jQuery
   var jquery = gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('./vendor/jquery'));
-  return merge(bootstrap, fontAwesome, jquery, jqueryEasing);
+  return merge(bootstrap, fontAwesome, jquery, jqueryEasing, magnificPopup);
 }
 
 // CSS task
